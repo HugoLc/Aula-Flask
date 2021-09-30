@@ -2,9 +2,11 @@ from flask import render_template
 from app import app
 
 
-@app.route("/")
-def index():
-    return render_template("index.html") #busca o arquivo dento da pasta templates
+@app.route("/index/<user>")
+@app.route("/", defaults={"user":None})
+def index(user):
+    return render_template("index.html",
+                            user=user) #busca o arquivo dento da pasta templates passando a varáavel user
 
 
 @app.route("/test", defaults={'name': None}) #define o valor default do name para none
