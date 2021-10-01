@@ -19,10 +19,11 @@
     </header>
     
     {% block content %}
+    <h2> Conteúdo</h2>
     {% endblock %}
 
-    <!-- {% block test %}
-    {% endblock %} -->
+    {% block test %}
+    {% endblock %}
     
     <footer> &copy Criado por Hugo Correia</footer>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
